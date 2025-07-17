@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=TikTok+Sans:opsz,wght@12..36,300..900&family=Varela+Round&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+ }
+
+body {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(-45deg, #2b0f3f, #b3397c, #6f0f40, #1b1b1b);
+    background-size: 400% 400%;
+    animation: pulseBG 15s ease infinite;
+    color: #f9f8fa;
+    font-family: 'TikTok Sans', sans-serif;
+}
+
+@keyframes pulseBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.login {
+    position: relative;
+    z-index: 2;
+    background: rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(24px);
+    border-radius: 40px;
+    padding: 72px 32px 58px;
+    width: 380px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    
+    /* GLOW */
+    box-shadow:
+        0 0 25px rgba(179, 57, 124, 0.4),   /* #b3397c più soft */
+        0 0 55px rgba(111, 15, 64, 0.3),     /* #6f0f40 filtrato */
+        0 0 90px rgba(43, 15, 63, 0.2);      /* #2b0f3f profondo */
+}
+
+.login img {
+    width: 84px;
+    margin-bottom: 32px;
+    filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.7))
+            drop-shadow(0 0 22px rgba(255, 64, 80, 0.6));
+    transition: transform 0.4s ease;
+}
+
+.login img:hover {
+    transform: scale(1.1) rotate(-2deg);
+}
+
+:root {
+    --primary-color: #ff4050;
+    --color-muted: #dcd1e0;
+}
+
+.background {
+    position: fixed;
+    z-index: -1;
+    top: 70%;
+    left: 50%;
+    right: 0;
+    bottom: -700px;
+    height: 100%;
+    translate: -50% 0;
+    width: 2283px;
+}
+
+svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: scaleY(3) scaleX(2.25);
+    transform-origin: bottom;
+    box-sizing: border-box;
+    display: block;
+    pointer-events: none;
+}
+
+.login {
+    position: relative;
+    z-index: 2;
+    background: rgb(6 5 7 / 25%);
+    backdrop-filter: blur(38px);
+    border-radius: 40px;
+    padding: 50px 40px 50px;
+    width: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.login img {
+    width: 74px;
+    margin: 0 0 32px;
+}
+
+.login :is(h2, h3) {
+    font-weight: 500;
+}
+
+.login h2 {
+    font-size: 20px;
+    margin-bottom: 0 0 6px;
+}
+
+.login h3 {
+    font-size: 12px;
+    color: var(--color-muted);
+    margin: 0 0 56px;
+}
+
+.login form {
+    display: grid;
+    gap: 12px;
+    width: 100%;
+    margin: 0 0 32px;
+}
+
+.login .textbox {
+    position: relative;
+}
+
+.login :is(input, button) {
+    height: 56px;
+    font-family: inherit;
+    font-size: 16px;
+    padding: 0 16px;
+    border: 0;
+    border-radius: 8px;
+}
+
+label, input {
+    transition: 0.3s;
+}
+
+.textbox label {
+    position: absolute;
+    top: 50%;
+    left: 16px;
+    translate: 0 -50%;
+    transform-origin: 0 50%;
+    color: #000000;
+    pointer-events: none;
+}
+
+.textbox input {
+    width: 100%;
+    padding-top: 10px;
+    background: #d1d1d1;
+    outline: none;
+    color: inherit;
+    box-shadow: 0 0 0 2px transparent;
+}
+
+.textbox input:focus {
+    box-shadow: 0 0 0 2px var(--primary-color);
+}
+
+.textbox input:is(:focus, :not(:invalid)) ~ label {
+    scale: 0.725;
+    translate: 0 -112%;
+}
+
+.login button {
+    position: relative;
+    color: #f9f9f9;
+    font-size: 17px;
+    background: var(--primary-color);
+}
+
+.login :is(button span, button p) {
+    transition: 0.3s;
+}
+
+.login button span {
+    position: absolute;
+    top: 52%;
+    left: 50%;
+    translate: 10px -50%;
+    opacity: 0;
+    font-size: 22px;
+}
+
+.login button:hover p {
+    translate: -10px 0;
+    cursor: url('cursor.cur'), auto;
+}
+
+.login button:hover span {
+    opacity: 1;
+    translate: 20px -50%;
+    cursor: url('cursor.cur'), auto;
+}
+
+.login a {
+    color: var(--primary-color);
+    font-size: 15px;
+}
+
+.login > p {
+    margin: 56px 0 0;
+    font-size: 15px;
+    color: var(--color-muted);
+}
+
+a {
+    cursor: url('cursor.cur'), auto;
+    text-decoration: none;
+}
+
+.register a {
+    cursor: url('cursor.cur'), auto;
+}
